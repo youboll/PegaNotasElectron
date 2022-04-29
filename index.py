@@ -1,6 +1,7 @@
 import requests
 import math
 import argparse
+import time
 arg = argparse.ArgumentParser()
 arg.add_argument("-n", "--nota", required=True,
    help="Caminho para o XML da nota fiscal")
@@ -20,6 +21,7 @@ def pegaNota(file):
    }
 
    url = "https://www.danfeonline.com.br/arquivo"
+   time.sleep(1)
    r = requests.request("POST", url, headers=headers, data=payload, files=files)
    return(r)
 args = vars(arg.parse_args())
