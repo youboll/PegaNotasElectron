@@ -1,0 +1,112 @@
+.form{
+    margin-left: 25%;
+    margin-top: 10%;
+    width: 40%;
+    height: 45%;
+
+    box-shadow: -4px 8px 11px 3px rgb(0 0 0 / 43%);
+    -webkit-box-shadow: -4px 8px 11px 3px rgb(0 0 0 / 43%);
+    -moz-box-shadow: -4px 8px 11px 3px rgba(0,0,0,0.43);
+
+    background-color: #456268;
+    padding: 2%;
+    border-radius: 15px;
+    border: 7px solid #79A3B1;
+}
+.form input {
+    margin-top: 2%;
+    border: 2px solid transparent;
+    background-color: #D0E8F2;
+    width: 100%;
+}
+.form button {
+    border: 1px solid transparent;
+    background-color: #6e99a7;
+    font-size: 95%;
+    cursor: pointer;
+}
+.form button:hover {
+    background-color: #1c5a6f;;
+}
+#descricao{
+    margin-top: 3%;
+    margin-bottom: 5%;
+    background-color: #D0E8F2;
+    overflow-y: auto;
+}
+body{
+    background-color:#FCF8EC;
+}
+#btn_terminar{
+    border: 1px solid transparent;
+    background-color: red;
+    font-weight: 600;
+    cursor: pointer;
+}
+#rightBtn{
+    margin-left: 43%;
+}
+span{
+    z-index: 0;
+    position: absolute;
+    left: 39%;
+    top: 33%;
+}
+
+
+
+
+.loader {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 9px solid;
+    border-color: rgb(198, 13, 13) rgb(185, 12, 12) transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 9px solid;
+    border-color: transparent transparent #ff5500 #FF3D00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .loader::before {
+    width: 64x;
+    height: 64px;
+    border-color: rgb(0, 0, 0) rgb(0, 0, 0) transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+      

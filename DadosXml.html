@@ -1,0 +1,19 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <head>
+        <script src="./DadosXML.js"></script>
+        <link rel="stylesheet" href="./dadosXml.css">
+    </head>
+    <body id="body">
+        <button onclick="nfeStack.sendAllData()" id="btn_terminar">Terminar</button>
+        <div class="form">
+            <input type="text" id="nfeEmitent"><br>
+            <input type="text"style="width:85%;" id="nfeNumero"> <input type="text" style="width:13%;" id="nfeUf"><br>
+            <input type="text" id="nfeMotivo" placeholder="Motivo da devolução"><br>
+            <div id="descricao"></div>
+            <button onclick="previousNfe()">Nota anterior</button>
+            <button onclick="nextNfe()" id="rightBtn">Próxima</button> 
+        </div>
+        <span class="loader"></span>
+    </body>
+</html>

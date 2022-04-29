@@ -1,0 +1,13 @@
+button{
+    margin-left: 41%;
+    margin-top: 25%;
+    width: 15%;
+    height: 12%;
+    background-color: #52bbdc;
+    border: 1px solid transparent;
+    font-size: medium;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #6e99a7;
+}

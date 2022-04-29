@@ -1,20 +1,56 @@
 {
-  "name": "electronnotas",
+  "name": "peganotasfinal",
+  "productName": "peganotasfinal",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My Electron application description",
+  "main": "main.js",
   "scripts": {
-    "start": "electron src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "electron": "^18.0.3"
+  "author": "MICRO 3",
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "peganotasfinal"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
   },
   "dependencies": {
-    "fast-xml-parser": "^4.0.7",
-    "xml-js": "^1.6.11"
+    "electron-squirrel-startup": "^1.0.0",
+    "fast-xml-parser": "^4.0.7"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "18.1.0"
   }
 }

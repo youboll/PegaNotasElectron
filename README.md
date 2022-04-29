@@ -1,3 +1,2 @@
 ***TODO***
-- (Possível) Pegar nota do WEBDanfe
-- Embelezar o programa
+- Fazer o controlller ler a nota da pasta e repassar ela pro front-end
