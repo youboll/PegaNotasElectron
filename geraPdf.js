@@ -4,7 +4,7 @@ module.exports = async function (nome,destination) {
     destination = destination.replace(/ /g,'%20')
     let commandString = "python index.py -n " + nome + " -o " + destination;
     setTimeout(async () => {
-        await exec(commandString,(error) => {
+        exec(commandString,(error) => {
             if (error) {throw error}
         })
     },500)

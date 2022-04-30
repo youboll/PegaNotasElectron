@@ -10,7 +10,8 @@ module.exports = class nfe {
 
         this.emitNome = xmlObj.nfeProc.NFe.infNFe.emit.xNome;
         this.emitUF = xmlObj.nfeProc.NFe.infNFe.emit.enderEmit.UF;
-        this.nfeNumber = xmlObj.nfeProc.NFe.infNFe.ide.nNF;
+        this.nfeNumber = xmlObj.nfeProc.NFe.infNFe.ide.nNF; //natOp
+        this.natOpe = xmlObj.nfeProc.NFe.infNFe.ide.natOp;
         this.nfeChave = xmlObj.nfeProc.NFe.infNFe['@_Id'].substring(3); //Tira os primeiros numeros
         this.nfeDesc = xmlObj.nfeProc.NFe.infNFe.infAdic.infCpl;
         this.xmlTitle = this.getFileData(location);
@@ -20,7 +21,7 @@ module.exports = class nfe {
         
     }
     getAllData() {
-        return({'nfeChafe':this.nfeChave,'emitNome':this.emitNome,'emitUF':this.emitUF,'nfeNumber':this.nfeNumber,'location':this.location,titles:{'pdfName':this.title,'xmlName':this.xmlTitle}})
+        return({'natOp':this.natOpe,'nfeChafe':this.nfeChave,'emitNome':this.emitNome,'emitUF':this.emitUF,'nfeNumber':this.nfeNumber,'location':this.location,titles:{'pdfName':this.title,'xmlName':this.xmlTitle}})
     }
     //Desconstroi a localizacao padrao do arquivo e o nome antigo
     getFileData(location) {

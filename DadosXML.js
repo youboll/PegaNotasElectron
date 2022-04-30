@@ -34,7 +34,8 @@ function writeXmlData () {
      window.emitNFE = document.querySelector('#nfeEmitent');
      window.ufNFE = document.querySelector('#nfeUf');
      window.descNFE = document.querySelector('#descricao');
-     window.nfeMotivo = document.querySelector('#nfeMotivo')
+     window.nfeMotivo = document.querySelector('#nfeMotivo');
+     window.natOp = document.querySelector('.natOp');
     Electron.ipcRenderer.send('getXmlData');
     Electron.ipcRenderer.on('getXmlData',(event,args) => {
         //Escrevendo dados XML na tela
@@ -65,6 +66,7 @@ function writeOnScreen() {
         emitNFE.value = curruentNFE.emitNome;
         ufNFE.value = curruentNFE.emitUF;
         descNFE.innerHTML = curruentNFE.nfeDesc;
+        window.natOp.innerHTML = curruentNFE.natOpe;
     }
     
     
@@ -90,6 +92,9 @@ window.onkeypress =  (event) => {
         fromDomtoStack()
     }
 }
+
+
+
 function previousNfe() {
  if (window.nfeCounter != 0) {
      window.nfeCounter--;
