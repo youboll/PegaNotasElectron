@@ -2,7 +2,7 @@ const { app, BrowserWindow, dialog, ipcMain, ipcRenderer } = require('electron')
 const Electron = require('electron')
 const fs = require('fs');
 const nfe = require('./nfe')
-
+const nfeLogger = require('./logger')
 const Controller = require('./controller');
 let controller;
 //Inicia a janela dos programas
@@ -88,7 +88,8 @@ ipcMain.on('writeXml',(event,args) => {
   dialog.showMessageBox(winNfe,{buttons:['Sim','Não'],message:"Deseja salvar as notas?"}).then((event) => {
     let buttonPressed = event.response;
     if (buttonPressed === 0) {
-      console.log('te')
+      console.log('te');
+      let nfeLog = new nfeLogger()
       for (const x in notasFeitas) {
         let nfe = notasFeitas[x];
         let pdfName = nfe['emitNome'] +" "+ nfe['emitUF'] +" "+ nfe['nfeNumber'] +" - "+ nfe['nfeMotivo']+".pdf";
@@ -96,9 +97,10 @@ ipcMain.on('writeXml',(event,args) => {
         
         fs.renameSync((nfe['location']+"\\"+nfe['xmlTitle']),nfe['location']+xmlName);
         fs.renameSync(nfe['location']+"\\"+nfe['title'],nfe['location']+pdfName);
+        nfeLog.addLog(pdfName)
         
       }
-
+      nfeLog.writeData()
       dialog.showMessageBox(winNfe,{buttons:['Ok'],'message':"Concluído"}).then((event) => {
         if (event.response == 0) {
           winNfe.close()

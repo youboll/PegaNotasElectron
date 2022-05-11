@@ -14,8 +14,6 @@ class notasFeitasStack {
     }
     sendAllData() {        
             Electron.ipcRenderer.send('writeXml',JSON.stringify(this.stack));
-            
-        
     }
 
 }
