@@ -77,6 +77,7 @@ function fromDomtoStack() {
         'nfeNumber':nNFE.value,
         'nfeMotivo':nfeMotivo.value,
         'location': window.curruentNFE.location,
+        'desc':window.curruentNFE.nfeDesc,
         'xmlTitle': window.curruentNFE.xmlTitle,
         'title': window.curruentNFE.title
     }

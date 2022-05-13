@@ -2,6 +2,7 @@
   "name": "peganotasfinal",
   "productName": "peganotasfinal",
   "version": "1.0.0",
+  "icon":"iconeFrutap.ico",
   "description": "My Electron application description",
   "main": "main.js",
   "scripts": {

@@ -97,7 +97,7 @@ ipcMain.on('writeXml',(event,args) => {
         
         fs.renameSync((nfe['location']+"\\"+nfe['xmlTitle']),nfe['location']+xmlName);
         fs.renameSync(nfe['location']+"\\"+nfe['title'],nfe['location']+pdfName);
-        nfeLog.addLog(pdfName)
+        nfeLog.addLog(pdfName +" "+ nfe['desc'])
         
       }
       nfeLog.writeData()
